@@ -471,50 +471,35 @@
 
 /* Mobile */
 @media (max-width: 800px) {
+  /* MOBILE: image is the priority — show the complete artwork */
   .lookbook-container {
     display: block;
+    width: 100%;
     height: auto;
     min-height: 0;
     overflow: visible;
+    background: #000;
   }
 
   .lookbook-image {
-    width: 100%;
-    height: auto;
-    min-height: 0;
-    object-fit: contain;
-  }
-
-  .lookbook-content {
-    width: 100%;
-    height: auto;
-    min-height: 0;
-    padding: 46px 22px 60px;
+    position: relative;
+    top: auto;
     display: block;
-    overflow: visible;
+    width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+    object-position: center center;
+    background: #000;
+    transform: none !important;
+    filter: none !important;
   }
 
-  .lookbook-tagline {
-    margin-bottom: 16px;
-    font-size: 9px;
-  }
-
-  .lookbook-title {
-    margin-bottom: 20px;
-    font-size: 38px;
-  }
-
-  .lookbook-description {
-    font-size: 14px;
-    margin-bottom: 28px;
-  }
-
-  .philosophy-item {
-    margin-bottom: 26px;
-  }
-
-  .philosophy-item-text {
-    font-size: 12px;
+  /* Hide story on mobile so it can never reduce/crop the image area */
+  .lookbook-content {
+    display: none !important;
   }
 }
 
