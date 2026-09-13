@@ -312,141 +312,213 @@
       animation: slideUp 0.8s ease-out;
     }
 
-    .lookbook-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      height: 100vh;
-    }
+    /* FULL-SCREEN LOOKBOOK
+       Each look now uses the entire viewport as the visual canvas.
+       The copy sits over the image instead of consuming half the screen. */
+    /* LOOKBOOK — synchronized 50/50 editorial layout */
+.lookbook-container {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 680px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background: #000;
+  overflow: hidden;
+}
 
-    .lookbook-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+/* Image: exactly half the viewport, complete artwork, no crop */
+.lookbook-image {
+  width: 100%;
+  height: 100%;
+  min-height: 680px;
+  display: block;
+  object-fit: contain;
+  object-position: center center;
+  background: #000;
+  transform: none;
+  filter: none;
+}
 
-    .lookbook-content {
-      background: #000;
-      color: #fff;
-      padding: 60px 50px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
+/* Text: exactly the same viewport height as the image */
+.lookbook-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 680px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px clamp(34px, 4.5vw, 72px);
+  color: #fff;
+  background:
+    radial-gradient(circle at 15% 30%, rgba(255,255,255,.045), transparent 38%),
+    linear-gradient(135deg, #090909 0%, #040404 100%);
+  overflow: hidden;
+}
 
-    .lookbook-content::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: 
-        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,.02) 2px, rgba(255,255,255,.02) 4px);
-      pointer-events: none;
-    }
+.lookbook-content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,.025),
+    transparent 30%,
+    transparent 100%
+  );
+}
 
-    .lookbook-content > * {
-      position: relative;
-      z-index: 1;
-    }
+.lookbook-content > * {
+  position: relative;
+  z-index: 1;
+}
 
-    .lookbook-title {
-      font-size: clamp(36px, 6vw, 80px);
-      font-weight: 700;
-      line-height: 1;
-      letter-spacing: -2px;
-      margin-bottom: 30px;
-      color: #fff;
-    }
+/* Tight editorial typography */
+.lookbook-tagline {
+  margin-bottom: 18px;
+  font-size: 10px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  color: var(--accent-light);
+  font-weight: 600;
+  max-width: 500px;
+}
 
-    .lookbook-tagline {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--accent-light);
-      margin-bottom: 40px;
-      font-weight: 600;
-    }
+.lookbook-title {
+  margin: 0 0 22px;
+  font-size: clamp(42px, 5vw, 68px);
+  line-height: .91;
+  letter-spacing: -2.5px;
+  font-weight: 700;
+  color: #fff;
+}
 
-    .lookbook-description {
-      font-size: 16px;
-      line-height: 1.8;
-      color: #ddd;
-      margin-bottom: 40px;
-      max-width: 400px;
-    }
+.lookbook-description {
+  margin: 0 0 26px;
+  max-width: 430px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #c9c9c9;
+}
 
-    .philosophy-item {
-      margin-bottom: 50px;
-    }
+.philosophy-item {
+  margin: 0 0 22px;
+  max-width: 450px;
+}
 
-    .philosophy-item-kicker {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #999;
-      margin-bottom: 8px;
-    }
+.philosophy-item:last-of-type {
+  margin-bottom: 0;
+}
 
-    .philosophy-item-title {
-      font-size: 14px;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 8px;
-    }
+.philosophy-item-kicker {
+  margin-bottom: 5px;
+  font-size: 9px;
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  color: #777;
+}
 
-    .philosophy-item-text {
-      font-size: 13px;
-      line-height: 1.6;
-      color: #aaa;
-    }
+.philosophy-item-title {
+  margin-bottom: 4px;
+  font-size: 13px;
+  line-height: 1.3;
+  font-weight: 600;
+  color: #fff;
+}
 
-    .lookbook-cta {
-      margin-top: 40px;
-      display: inline-flex;
-      width: fit-content;
-      padding: 14px 24px;
-      background: var(--accent);
-      color: var(--white);
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-weight: 600;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      border: 1px solid var(--accent);
-    }
+.philosophy-item-text {
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: #999;
+}
 
-    .lookbook-cta::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(255, 255, 255, 0.15);
-      transform: translateX(-100%);
-      transition: transform 0.4s ease;
-      z-index: 0;
-    }
+.lookbook-cta {
+  display: none !important;
+  align-self: flex-start;
+  margin-top: 24px;
+  display: inline-flex;
+  width: fit-content;
+  padding: 12px 20px;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  font-weight: 600;
+  border: 1px solid var(--accent);
+  position: relative;
+  overflow: hidden;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
 
-    .lookbook-cta span {
-      position: relative;
-      z-index: 1;
-    }
+.lookbook-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.35);
+}
 
-    .lookbook-cta:hover {
-      transform: translateX(2px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    }
+/* Keep both halves locked together while this lookbook frame is visible */
+@media (min-width: 801px) {
+  .lookbook-image,
+  .lookbook-content {
+    position: relative;
+  }
+}
 
-    .lookbook-cta:hover::before {
-      transform: translateX(0);
-    }
+/* Mobile */
+@media (max-width: 800px) {
+  .lookbook-container {
+    display: block;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
 
-    /* DROP COUNTDOWN */
+  .lookbook-image {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    object-fit: contain;
+  }
+
+  .lookbook-content {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    padding: 46px 22px 60px;
+    display: block;
+    overflow: visible;
+  }
+
+  .lookbook-tagline {
+    margin-bottom: 16px;
+    font-size: 9px;
+  }
+
+  .lookbook-title {
+    margin-bottom: 20px;
+    font-size: 38px;
+  }
+
+  .lookbook-description {
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+
+  .philosophy-item {
+    margin-bottom: 26px;
+  }
+
+  .philosophy-item-text {
+    font-size: 12px;
+  }
+}
+
+/* DROP COUNTDOWN */
     .drop-countdown {
       padding: 10vw 5vw;
       border-bottom: 1px solid var(--line);
@@ -780,6 +852,14 @@
       font-weight: 500;
     }
 
+    /* WIDE SCREENS */
+    @media (min-width: 1400px) {
+      .lookbook-content {
+        width: min(44vw, 760px);
+        padding-right: 7vw;
+      }
+    }
+
     /* MOBILE */
     @media (max-width: 800px) {
       nav {
@@ -813,24 +893,53 @@
         padding: 100px 20px;
       }
 
-      /* Mobile Lookbook - Image on top, content below */
+      /* Mobile Lookbook - full-width image first, copy below */
       .lookbook-container {
-        grid-template-columns: 1fr;
         height: auto;
+        min-height: 0;
+        overflow: visible;
+      }
+
+      .lookbook-container::after {
+        display: none;
       }
 
       .lookbook-image {
+        position: relative;
+        inset: auto;
         width: 100%;
-        height: 50vh;
+        height: 72svh;
+        min-height: 520px;
         object-fit: cover;
+        object-position: center center;
       }
 
       .lookbook-content {
-        padding: 40px 20px 60px;
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        height: auto;
+        padding: 50px 20px 70px;
         min-height: auto;
+        background: #000;
+        text-shadow: none;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+      }
+
+      .lookbook-content .lookbook-tagline,
+      .lookbook-content .lookbook-title,
+      .lookbook-content .lookbook-description,
+      .lookbook-content .philosophy-item,
+      .lookbook-content .lookbook-cta {
+  display: none !important;
+        opacity: 1;
+        transform: none;
       }
 
       .lookbook-title {
@@ -964,8 +1073,6 @@
           <div class="philosophy-item-title">FORM FIRST</div>
           <div class="philosophy-item-text">"From form, toward what lies beyond." A belief that form is just the beginning — there's more ahead.</div>
         </div>
-
-        <a href="#drop" class="lookbook-cta"><span>Explore the lookbook</span></a>
       </div>
     </div>
   </section>
@@ -991,8 +1098,6 @@
           <div class="philosophy-item-title">INTENT IN ACTION</div>
           <div class="philosophy-item-text">Every decision shapes what comes next. Form/01 exists to prove that thoughtful design can change the game.</div>
         </div>
-
-        <a href="#drop" class="lookbook-cta"><span>Join the movement</span></a>
       </div>
     </div>
   </section>
