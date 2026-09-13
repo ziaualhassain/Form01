@@ -304,111 +304,6 @@
       color: var(--muted);
     }
 
-    /* PRODUCTS */
-    .section {
-      padding: 10vw 5vw;
-      border-bottom: 1px solid var(--line);
-      animation: slideUp 0.8s ease-out;
-    }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 48px;
-    }
-
-    .section-title {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .section-meta {
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .product-image {
-      aspect-ratio: 4 / 5;
-      margin-bottom: 20px;
-      position: relative;
-      overflow: hidden;
-      background: #ddd9d0;
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      cursor: pointer;
-    }
-
-    .product-image:hover {
-      transform: scale(1.02);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-      border-color: rgba(139, 115, 85, 0.2);
-    }
-
-    .product-image.one {
-      background: linear-gradient(145deg, #d6d2c8, #9b978e);
-    }
-
-    .product-image.two {
-      background: linear-gradient(145deg, #b7b5af, #595853);
-    }
-
-    .product-image.three {
-      background: linear-gradient(145deg, #e1ded7, #b1ada4);
-    }
-
-    .product-image::after {
-      content: "FORM/01";
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      font-size: 36px;
-      font-weight: 700;
-      letter-spacing: -2px;
-      color: rgba(255, 255, 255, 0.4);
-      transition: opacity 0.3s ease;
-    }
-
-    .product-image:hover::after {
-      opacity: 0.8;
-    }
-
-    .product-info {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .product-name {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .product-detail {
-      font-size: 11px;
-      color: var(--muted);
-      margin-top: 6px;
-    }
-
-    .price {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--accent);
-    }
-
     /* LOOKBOOK SECTION */
     .lookbook-section {
       padding: 0;
@@ -952,14 +847,6 @@
         letter-spacing: -2px;
       }
 
-      .products {
-        grid-template-columns: 1fr;
-      }
-
-      .section {
-        padding: 80px 20px;
-      }
-
       .values {
         grid-template-columns: 1fr 1fr;
       }
@@ -1008,7 +895,6 @@
   <nav>
     <div class="logo">FORM/01</div>
     <div class="nav-links">
-      <a href="#shop">Shop</a>
       <a href="#philosophy">Philosophy</a>
       <a href="#drop">Drop</a>
     </div>
@@ -1036,48 +922,6 @@
     </p>
   </section>
 
-  <section class="section" id="shop">
-    <div class="section-head">
-      <div class="section-title">Featured pieces</div>
-      <div class="section-meta">Essentials for the mindful consumer.</div>
-    </div>
-
-    <div class="products">
-      <div>
-        <div class="product-image one"></div>
-        <div class="product-info">
-          <div>
-            <div class="product-name">Essential Shirt</div>
-            <div class="product-detail">Premium linen / Off-white</div>
-          </div>
-          <div class="price">¥8,500</div>
-        </div>
-      </div>
-
-      <div>
-        <div class="product-image two"></div>
-        <div class="product-info">
-          <div>
-            <div class="product-name">Work Trousers</div>
-            <div class="product-detail">Organic cotton / Charcoal</div>
-          </div>
-          <div class="price">¥12,000</div>
-        </div>
-      </div>
-
-      <div>
-        <div class="product-image three"></div>
-        <div class="product-info">
-          <div>
-            <div class="product-name">Minimal Cardigan</div>
-            <div class="product-detail">Merino wool / Natural</div>
-          </div>
-          <div class="price">¥15,500</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="lookbook-section">
     <div class="lookbook-container">
       <img src="jap_drop.png" alt="Lookbook image - From Form, Toward the Future" class="lookbook-image" />
@@ -1100,7 +944,7 @@
           <div class="philosophy-item-text">"From form, toward what lies beyond." A belief that form is just the beginning — there's more ahead.</div>
         </div>
 
-        <a href="#shop" class="lookbook-cta"><span>Explore the lookbook</span></a>
+        <a href="#drop" class="lookbook-cta"><span>Explore the lookbook</span></a>
       </div>
     </div>
   </section>
@@ -1127,7 +971,7 @@
           <div class="philosophy-item-text">Every decision shapes what comes next. Form/01 exists to prove that thoughtful design can change the game.</div>
         </div>
 
-        <a href="#shop" class="lookbook-cta"><span>Join the movement</span></a>
+        <a href="#drop" class="lookbook-cta"><span>Join the movement</span></a>
       </div>
     </div>
   </section>
@@ -1180,48 +1024,6 @@
     </div>
   </section>
 
-  <section class="section" id="lab">
-    <div class="section-head">
-      <div class="section-title">The Lab</div>
-      <div class="section-meta">Experimental pieces and limited runs.</div>
-    </div>
-
-    <div class="products">
-      <div>
-        <div class="product-image one"></div>
-        <div class="product-info">
-          <div>
-            <div class="product-name">Oversized Research Jacket</div>
-            <div class="product-detail">Salvaged fabric blend / Cream</div>
-          </div>
-          <div class="price">¥24,000</div>
-        </div>
-      </div>
-
-      <div>
-        <div class="product-image two"></div>
-        <div class="product-info">
-          <div>
-            <div class="product-name">Archive Pants</div>
-            <div class="product-detail">Surplus fabric / Charcoal</div>
-          </div>
-          <div class="price">¥18,500</div>
-        </div>
-      </div>
-
-      <div>
-        <div class="product-image three"></div>
-        <div class="product-info">
-          <div>
-            <div class="product-name">Reversible Vest</div>
-            <div class="product-detail">Organic wool / Reversible</div>
-          </div>
-          <div class="price">¥16,800</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="values">
     <div class="value">
       <div class="value-number">01</div>
@@ -1256,12 +1058,6 @@
         <div class="footer-tagline">Built beyond trends.<br>Made to last.</div>
       </div>
       <div class="footer-links">
-        <div class="footer-column">
-          <span>Shop</span>
-          <a href="#shop">Featured</a>
-          <a href="#lab">The Lab</a>
-          <a href="#soon">Coming Soon</a>
-        </div>
         <div class="footer-column">
           <span>Info</span>
           <a href="#about">About</a>
