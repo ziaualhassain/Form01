@@ -998,300 +998,291 @@
       }
 
       .footer-links {
-        gap: 40px;
+        flex-direction: column;
+        gap: 32px;
       }
-
-      nav::after {
-        display: none;
-      }
-
-      a::after {
-        display: none;
-      }
-    }
-
-    /* TOUCH TARGET IMPROVEMENTS */
-    button, a[href] {
-      min-height: 44px;
-      display: flex;
-      align-items: center;
-    }
-
-    /* SMOOTH TRANSITIONS */
-    * {
-      transition-property: color, background, transform, box-shadow;
-      transition-duration: 0.2s;
-      transition-timing-function: ease;
     }
   </style>
 </head>
-
 <body>
-
   <nav>
-    <a href="#" class="logo">FORM/01</a>
-
+    <div class="logo">FORM/01</div>
     <div class="nav-links">
       <a href="#shop">Shop</a>
-      <a href="#drop">Drop 001</a>
-      <a href="#about">About</a>
-      <a href="#lab">The Lab</a>
-      <a href="#journal">Journal</a>
+      <a href="#philosophy">Philosophy</a>
+      <a href="#drop">Drop</a>
     </div>
-
     <div class="nav-actions">
-      <a href="#">Search</a>
-      <a href="#">Bag (0)</a>
+      <a href="#account">Account</a>
+      <a href="#cart">Cart</a>
     </div>
   </nav>
 
-  <main>
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow">Form, Redefined</div>
+      <h1>Built<br>beyond<br>trends.</h1>
+      <div class="tagline">Premium essentials designed for everyday life.</div>
+      <div class="hero-subline">Thoughtful construction. Timeless design. Made to last. A new collection that challenges what "form" means.</div>
+      <button class="hero-cta"><span>Explore</span></button>
+    </div>
+    <div class="hero-image"></div>
+  </section>
 
-    <section class="hero">
-      <div class="hero-copy">
-        <div>
-          <div class="eyebrow">Independent essentials / 001</div>
-          <h1>FORM<br>/01</h1>
-          <p class="tagline">Built with thought. Made to last.</p>
-          <p class="hero-subline">Every detail is considered. Every piece is built for the long run.</p>
-          <a href="#shop" class="hero-cta"><span>Explore collection</span></a>
+  <section class="intro">
+    <h2>What we<br>make.</h2>
+    <p class="intro-copy">
+      FORM/01 is not just clothing. It's a mindset. Every piece is designed with intention, built from materials that earn their place, and created to become part of your everyday life—not a trend, but a fixture.
+    </p>
+  </section>
+
+  <section class="section" id="shop">
+    <div class="section-head">
+      <div class="section-title">Featured pieces</div>
+      <div class="section-meta">Essentials for the mindful consumer.</div>
+    </div>
+
+    <div class="products">
+      <div>
+        <div class="product-image one"></div>
+        <div class="product-info">
+          <div>
+            <div class="product-name">Essential Shirt</div>
+            <div class="product-detail">Premium linen / Off-white</div>
+          </div>
+          <div class="price">¥8,500</div>
         </div>
       </div>
 
-      <div class="hero-image">
-        <span class="image-label">Collection 001 / Everyday Form</span>
-        <span class="image-label">01 — 04</span>
-      </div>
-    </section>
-
-    <section class="intro" id="about">
-      <h2>Clothing with<br>purpose.</h2>
-      <p class="intro-copy">
-        FORM/01 creates premium everyday essentials for people who
-        create, challenge and change what comes next. Considered
-        materials. Refined silhouettes. Built for repeat wear.
-      </p>
-    </section>
-
-    <section class="section" id="shop">
-      <div class="section-head">
-        <div class="section-title">Core collection</div>
-        <div class="section-meta">03 essentials / 001</div>
-      </div>
-
-      <div class="products">
-
-        <article>
-          <div class="product-image one"></div>
-          <div class="product-info">
-            <div>
-              <div class="product-name">Core Heavyweight Tee</div>
-              <div class="product-detail">240 GSM / 100% Cotton</div>
-            </div>
-            <div class="price">₹1,499</div>
+      <div>
+        <div class="product-image two"></div>
+        <div class="product-info">
+          <div>
+            <div class="product-name">Work Trousers</div>
+            <div class="product-detail">Organic cotton / Charcoal</div>
           </div>
-        </article>
-
-        <article>
-          <div class="product-image two"></div>
-          <div class="product-info">
-            <div>
-              <div class="product-name">Core Hoodie</div>
-              <div class="product-detail">400 GSM / Brushed Fleece</div>
-            </div>
-            <div class="price">₹2,999</div>
-          </div>
-        </article>
-
-        <article>
-          <div class="product-image three"></div>
-          <div class="product-info">
-            <div>
-              <div class="product-name">Utility Overshirt</div>
-              <div class="product-detail">Heavy Twill / Relaxed Fit</div>
-            </div>
-            <div class="price">₹3,499</div>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <section class="lookbook-section">
-      <div class="lookbook-container">
-        <img src="https://github.com/ziaualhassain/Form01/blob/main/jap_drop.png" alt="FORM/01 Premium Lookbook" class="lookbook-image" />
-        <div class="lookbook-content">
-          <div class="lookbook-tagline">FROM FORM, TOWARD THE FUTURE.</div>
-          <h2 class="lookbook-title">A HIGHER<br>TOMORROW</h2>
-          <p class="lookbook-description">
-            More than clothing. A mindset for what comes next. Create. Challenge. Change.
-          </p>
-
-          <div class="philosophy-item">
-            <div class="philosophy-item-kicker">THE MEANING</div>
-            <div class="philosophy-item-title">MIRAI E</div>
-            <div class="philosophy-item-text">"Toward the Future" — A reminder to keep moving, to go beyond what exists.</div>
-          </div>
-
-          <div class="philosophy-item">
-            <div class="philosophy-item-kicker">KATAKARA, MOTTO SAKI E</div>
-            <div class="philosophy-item-title">FORM FIRST</div>
-            <div class="philosophy-item-text">"From form, toward what lies beyond." A belief that form is just the beginning — there's more ahead.</div>
-          </div>
-
-          <a href="#shop" class="lookbook-cta"><span>Explore the lookbook</span></a>
+          <div class="price">¥12,000</div>
         </div>
       </div>
-    </section>
 
-    <section class="drop-countdown" id="drop">
-      <div class="drop-inner">
-        <div>
-          <div class="eyebrow">FORM/01 / DROP 001</div>
-          <h2>THE FIRST FORM<br>TAKES SHAPE.</h2>
-          <p class="drop-copy">Built with thought. Made to last.</p>
-          <p class="drop-subcopy">Our first collection arrives December 31, 2026.</p>
-        </div>
-
-        <div class="countdown" aria-label="Countdown to FORM/01 Drop 001">
-          <div class="count-unit">
-            <span id="days">000</span>
-            <small>DAYS</small>
+      <div>
+        <div class="product-image three"></div>
+        <div class="product-info">
+          <div>
+            <div class="product-name">Minimal Cardigan</div>
+            <div class="product-detail">Merino wool / Natural</div>
           </div>
-          <div class="count-unit">
-            <span id="hours">00</span>
-            <small>HOURS</small>
-          </div>
-          <div class="count-unit">
-            <span id="minutes">00</span>
-            <small>MINUTES</small>
-          </div>
-          <div class="count-unit">
-            <span id="seconds">00</span>
-            <small>SECONDS</small>
-          </div>
-        </div>
-
-        <div class="drop-date">31.12.2026 / DROP 001</div>
-      </div>
-    </section>
-
-    <section class="philosophy">
-      <div class="philosophy-kicker">Our philosophy / 001</div>
-      <div class="philosophy-content">
-        <h2>BUILT WITH<br>THOUGHT.<br>MADE TO LAST.</h2>
-        <div class="philosophy-copy">
-          <p>
-            Every detail is considered. Every piece is built for the long run.
-          </p>
-          <p>
-            We believe clothing should earn its place in your wardrobe —
-            through better materials, thoughtful construction and timeless design.
-          </p>
+          <div class="price">¥15,500</div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section" id="lab">
-      <div class="section-head">
-        <div class="section-title">The Lab</div>
-        <div class="section-meta">How we build</div>
+  <section class="lookbook-section">
+    <div class="lookbook-container">
+      <img src="jap_drop.png" alt="Lookbook image - From Form, Toward the Future" class="lookbook-image" />
+      <div class="lookbook-content">
+        <div class="lookbook-tagline">FROM FORM, TOWARD THE FUTURE.</div>
+        <h2 class="lookbook-title">A HIGHER<br>TOMORROW</h2>
+        <p class="lookbook-description">
+          More than clothing. A mindset for what comes next. Create. Challenge. Change.
+        </p>
+
+        <div class="philosophy-item">
+          <div class="philosophy-item-kicker">THE MEANING</div>
+          <div class="philosophy-item-title">MIRAI E</div>
+          <div class="philosophy-item-text">"Toward the Future" — A reminder to keep moving, to go beyond what exists.</div>
+        </div>
+
+        <div class="philosophy-item">
+          <div class="philosophy-item-kicker">KATAKARA, MOTTO SAKI E</div>
+          <div class="philosophy-item-title">FORM FIRST</div>
+          <div class="philosophy-item-text">"From form, toward what lies beyond." A belief that form is just the beginning — there's more ahead.</div>
+        </div>
+
+        <a href="#shop" class="lookbook-cta"><span>Explore the lookbook</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="drop-countdown" id="drop">
+    <div class="drop-inner">
+      <div>
+        <div class="eyebrow">FORM/01 / DROP 001</div>
+        <h2>THE FIRST FORM<br>TAKES SHAPE.</h2>
+        <p class="drop-copy">Built with thought. Made to last.</p>
+        <p class="drop-subcopy">Our first collection arrives December 31, 2026.</p>
       </div>
 
-      <div class="values">
-        <div class="value">
-          <div class="value-number">01</div>
-          <h3>Material</h3>
-          <p>Heavyweight fabrics selected for comfort, structure and longevity.</p>
+      <div class="countdown" aria-label="Countdown to FORM/01 Drop 001">
+        <div class="count-unit">
+          <span id="days">000</span>
+          <small>DAYS</small>
         </div>
-
-        <div class="value">
-          <div class="value-number">02</div>
-          <h3>Construction</h3>
-          <p>Thoughtful stitching and construction designed for everyday use.</p>
+        <div class="count-unit">
+          <span id="hours">00</span>
+          <small>HOURS</small>
         </div>
-
-        <div class="value">
-          <div class="value-number">03</div>
-          <h3>Fit</h3>
-          <p>Relaxed silhouettes designed to move naturally with you.</p>
+        <div class="count-unit">
+          <span id="minutes">00</span>
+          <small>MINUTES</small>
         </div>
-
-        <div class="value">
-          <div class="value-number">04</div>
-          <h3>Longevity</h3>
-          <p>Less trend. More time. Pieces made to stay relevant.</p>
+        <div class="count-unit">
+          <span id="seconds">00</span>
+          <small>SECONDS</small>
         </div>
       </div>
-    </section>
 
-    <section class="statement" id="journal">
-      <h2>BUILT<br>BEYOND<br>TRENDS.</h2>
-    </section>
+      <div class="drop-date">31.12.2026 / DROP 001</div>
+    </div>
+  </section>
 
-  </main>
+  <section class="philosophy" id="philosophy">
+    <div class="philosophy-kicker">Our philosophy / 001</div>
+    <div class="philosophy-content">
+      <h2>BUILT WITH<br>THOUGHT.<br>MADE TO LAST.</h2>
+      <div class="philosophy-copy">
+        <p>
+          Every detail is considered. Every piece is built for the long run.
+        </p>
+        <p>
+          We believe clothing should earn its place in your wardrobe —
+          through better materials, thoughtful construction and timeless design.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="lab">
+    <div class="section-head">
+      <div class="section-title">The Lab</div>
+      <div class="section-meta">Experimental pieces and limited runs.</div>
+    </div>
+
+    <div class="products">
+      <div>
+        <div class="product-image one"></div>
+        <div class="product-info">
+          <div>
+            <div class="product-name">Oversized Research Jacket</div>
+            <div class="product-detail">Salvaged fabric blend / Cream</div>
+          </div>
+          <div class="price">¥24,000</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="product-image two"></div>
+        <div class="product-info">
+          <div>
+            <div class="product-name">Archive Pants</div>
+            <div class="product-detail">Surplus fabric / Charcoal</div>
+          </div>
+          <div class="price">¥18,500</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="product-image three"></div>
+        <div class="product-info">
+          <div>
+            <div class="product-name">Reversible Vest</div>
+            <div class="product-detail">Organic wool / Reversible</div>
+          </div>
+          <div class="price">¥16,800</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="values">
+    <div class="value">
+      <div class="value-number">01</div>
+      <h3>Thoughtfulness</h3>
+      <p>Every decision has intention. Design, materials, construction—nothing is accidental.</p>
+    </div>
+    <div class="value">
+      <div class="value-number">02</div>
+      <h3>Durability</h3>
+      <p>We use materials built to last and construction methods that stand the test of time.</p>
+    </div>
+    <div class="value">
+      <div class="value-number">03</div>
+      <h3>Minimalism</h3>
+      <p>Form through reduction. We remove what isn't necessary to reveal what truly matters.</p>
+    </div>
+    <div class="value">
+      <div class="value-number">04</div>
+      <h3>Evolution</h3>
+      <p>Not trends, but growth. We evolve thoughtfully, always asking: what comes next?</p>
+    </div>
+  </section>
+
+  <section class="statement">
+    <h2>The only constant is change. We're building for what's next.</h2>
+  </section>
 
   <footer>
     <div class="footer-top">
       <div>
         <div class="footer-logo">FORM/01</div>
-        <div class="footer-tagline">Built with thought. Made to last.<br>Built beyond trends.</div>
+        <div class="footer-tagline">Built beyond trends.<br>Made to last.</div>
       </div>
-
       <div class="footer-links">
         <div class="footer-column">
-          <span>Explore</span>
-          <a href="#shop">Shop</a>
-          <a href="#drop">Drop 001</a>
-          <a href="#about">About</a>
+          <span>Shop</span>
+          <a href="#shop">Featured</a>
           <a href="#lab">The Lab</a>
+          <a href="#soon">Coming Soon</a>
         </div>
-
         <div class="footer-column">
           <span>Info</span>
-          <a href="#">Contact</a>
-          <a href="#">Shipping</a>
-          <a href="#">Returns</a>
+          <a href="#about">About</a>
+          <a href="#philosophy">Philosophy</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-column">
+          <span>Legal</span>
+          <a href="#privacy">Privacy</a>
+          <a href="#terms">Terms</a>
+          <a href="#shipping">Shipping</a>
         </div>
       </div>
     </div>
-
     <div class="copyright">
-      <span>© 2026 FORM/01</span>
-      <span>Built beyond trends.</span>
+      <span>© 2026 FORM/01. All rights reserved.</span>
+      <span>Designed with intention. Built to last.</span>
     </div>
   </footer>
 
-
   <script>
-    (function () {
-      const target = Date.UTC(2026, 11, 31, 23, 59, 59);
-      const days = document.getElementById("days");
-      const hours = document.getElementById("hours");
-      const minutes = document.getElementById("minutes");
-      const seconds = document.getElementById("seconds");
+    function updateCountdown() {
+      const targetDate = new Date('2026-12-31T23:59:59').getTime();
+      const interval = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
 
-      function updateCountdown() {
-        let remaining = Math.max(0, target - Date.now());
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        const d = Math.floor(remaining / 86400000);
-        remaining %= 86400000;
-        const h = Math.floor(remaining / 3600000);
-        remaining %= 3600000;
-        const m = Math.floor(remaining / 60000);
-        remaining %= 60000;
-        const s = Math.floor(remaining / 1000);
+        document.getElementById('days').textContent = String(days).padStart(3, '0');
+        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
 
-        days.textContent = String(d).padStart(3, "0");
-        hours.textContent = String(h).padStart(2, "0");
-        minutes.textContent = String(m).padStart(2, "0");
-        seconds.textContent = String(s).padStart(2, "0");
-      }
+        if (distance < 0) {
+          clearInterval(interval);
+          document.getElementById('days').textContent = '000';
+          document.getElementById('hours').textContent = '00';
+          document.getElementById('minutes').textContent = '00';
+          document.getElementById('seconds').textContent = '00';
+        }
+      }, 1000);
+    }
 
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
-    })();
+    updateCountdown();
   </script>
-
 </body>
 </html>
