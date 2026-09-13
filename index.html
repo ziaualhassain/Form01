@@ -268,6 +268,68 @@
       font-weight: 500;
     }
 
+
+    /* HERO ACTIONS + MINIMAL COUNTDOWN */
+    .hero-actions { display:flex; align-items:flex-end; gap:24px; margin-top:48px; flex-wrap:wrap; }
+    .hero-actions .hero-cta { margin-top:0; }
+    .hero-mini-countdown { display:flex; flex-direction:column; gap:6px; padding-bottom:2px; min-width:126px; }
+    .hero-mini-label { font-size:9px; text-transform:uppercase; letter-spacing:1.8px; color:var(--accent); font-weight:600; }
+    .hero-mini-time { font-variant-numeric:tabular-nums; font-size:12px; letter-spacing:1.5px; color:var(--muted); }
+
+    /* DROP INTRO — deliberately outside the countdown container */
+    .drop-intro { padding:8vw 5vw 4vw; border-bottom:1px solid var(--line); }
+    .drop-intro-inner { max-width:1400px; margin:0 auto; }
+    .drop-intro .eyebrow { margin-bottom:24px; }
+    .drop-intro h2 { font-size:clamp(46px,7vw,108px); line-height:.86; letter-spacing:-3px; font-weight:700; }
+    .drop-copy { margin-top:28px; font-size:17px; font-weight:500; }
+    .drop-subcopy { margin-top:8px; color:var(--muted); font-size:12px; }
+
+    /* COUNTDOWN — contains ONLY the timer */
+    .drop-countdown { padding:0 5vw 8vw; border-bottom:1px solid var(--line); background:linear-gradient(135deg,#171717 0%,#242424 100%); color:#fff; position:relative; overflow:hidden; }
+    .drop-countdown::before { content:''; position:absolute; inset:0; background:repeating-linear-gradient(90deg,transparent,transparent 2px,rgba(255,255,255,.025) 2px,rgba(255,255,255,.025) 4px); pointer-events:none; }
+    .drop-inner { max-width:1400px; margin:0 auto; position:relative; z-index:1; }
+    .countdown { margin:0; display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid #444; border-bottom:1px solid #444; }
+    .count-unit { padding:34px 20px 30px 0; border-right:1px solid #444; }
+    .count-unit:not(:first-child) { padding-left:20px; }
+    .count-unit:last-child { border-right:0; }
+    .count-unit span { display:block; font-size:clamp(42px,7vw,92px); line-height:1; letter-spacing:-3px; font-weight:700; color:var(--accent-light); font-variant-numeric:tabular-nums; }
+    .count-unit small { display:block; margin-top:14px; font-size:9px; letter-spacing:2px; color:#888; font-weight:600; }
+
+    /* EST.01 IMAGE */
+    .est-launch { width:100%; background:#000; border-bottom:1px solid var(--line); position:relative; overflow:hidden; }
+    .est-launch img { display:block; width:100%; height:100svh; min-height:620px; object-fit:contain; object-position:center; background:#000; }
+    .est-image-fallback { display:none; min-height:70svh; align-items:center; justify-content:center; background:#111; color:#fff; }
+    .est-image-fallback span { font-size:clamp(70px,13vw,180px); font-weight:700; letter-spacing:-5px; }
+    .est-image-missing .est-image-fallback { display:flex; }
+
+    /* EST.01 MANIFESTO */
+    .est-statement { padding:10vw 5vw 11vw; border-bottom:1px solid var(--line); position:relative; overflow:hidden; }
+    .est-statement::before { content:'EST.01'; position:absolute; right:-2vw; top:2vw; font-size:clamp(140px,25vw,380px); line-height:1; font-weight:700; letter-spacing:-10px; color:rgba(17,17,17,.035); pointer-events:none; }
+    .est-statement-inner { max-width:1400px; margin:0 auto; position:relative; z-index:1; }
+    .est-heading-row { display:grid; grid-template-columns:1fr 1.35fr; gap:8vw; padding-bottom:5vw; border-bottom:1px solid var(--line); align-items:end; }
+    .est-statement h2 { font-size:clamp(80px,13vw,190px); line-height:.78; letter-spacing:-6px; font-weight:700; }
+    .est-opening { max-width:650px; }
+    .est-opening strong { display:block; font-size:clamp(30px,4vw,58px); line-height:.95; letter-spacing:-2px; font-weight:600; }
+    .est-opening span { display:block; margin-top:18px; font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); }
+    .est-body { display:block; padding-top:5vw; }
+    .est-copy { max-width:920px; margin:0 auto; }
+    .est-copy p { font-size:clamp(16px,1.5vw,21px); line-height:1.7; color:var(--muted); margin-bottom:24px; }
+    .est-copy .est-emphasis { color:var(--text); font-size:clamp(22px,2.6vw,38px); line-height:1.2; letter-spacing:-1px; margin:45px 0; }
+    .est-copy .est-final { color:var(--text); font-size:clamp(22px,2.8vw,40px); line-height:1.15; letter-spacing:-1px; margin-top:55px; }
+    .est-signoff { grid-column:2; margin-top:18px; padding-top:30px; border-top:1px solid var(--line); display:flex; align-items:flex-end; justify-content:space-between; gap:30px; }
+    .est-signoff-mark { font-size:28px; font-weight:700; letter-spacing:-2px; }
+    .est-signoff-copy { text-align:right; font-size:10px; line-height:1.6; letter-spacing:1.7px; color:var(--muted); text-transform:uppercase; }
+
+
+    /* NEXT REVEAL TEASER */
+    .est-teaser { padding:clamp(90px,12vw,180px) 5vw; border-bottom:1px solid var(--line); background:var(--bg); }
+    .est-teaser-inner { max-width:1400px; margin:0 auto; text-align:center; }
+    .est-teaser-index { display:inline-flex; align-items:center; gap:14px; margin-bottom:42px; font-size:9px; letter-spacing:2.8px; text-transform:uppercase; color:var(--muted); }
+    .est-teaser-index::before { content:""; width:32px; height:1px; background:var(--line); }
+    .est-teaser strong { display:block; max-width:1050px; margin:0 auto; font-size:clamp(42px,7vw,104px); line-height:.94; letter-spacing:-4px; font-weight:500; text-transform:none; }
+    .est-teaser-rule { width:1px; height:58px; background:var(--line); margin:48px auto 30px; }
+    .est-teaser small { display:block; font-size:10px; letter-spacing:2.8px; text-transform:uppercase; color:var(--muted); }
+
     /* INTRO */
     .intro {
       padding: 15vw 5vw;
@@ -1004,6 +1066,29 @@
         gap: 32px;
       }
     }
+
+    @media (max-width: 800px) {
+      .hero-actions { align-items:stretch; gap:16px; }
+      .hero-mini-countdown { justify-content:center; min-width:110px; }
+      .drop-intro { padding:78px 20px 38px; }
+      .drop-intro h2 { letter-spacing:-2px; }
+      .drop-countdown { padding:0 20px 70px; }
+      .countdown { grid-template-columns:repeat(2,1fr); }
+      .count-unit { padding:22px 12px 22px 0; border-bottom:1px solid #444; }
+      .count-unit:nth-child(2) { border-right:0; }
+      .count-unit:nth-child(3), .count-unit:nth-child(4) { border-bottom:0; }
+      .count-unit:not(:first-child) { padding-left:12px; }
+      .count-unit span { font-size:34px; letter-spacing:-2px; }
+      .est-launch img { height:auto; min-height:0; max-height:none; object-fit:contain; }
+      .est-image-fallback { min-height:60vh; }
+      .est-statement { padding:80px 20px 90px; }
+      .est-statement::before { font-size:35vw; top:20px; right:-10vw; }
+      .est-heading-row, .est-body { grid-template-columns:1fr; gap:42px; }
+      .est-statement h2 { font-size:clamp(74px,22vw,140px); letter-spacing:-4px; }
+      .est-copy { grid-column:1; margin:0; }
+      .est-teaser { padding:90px 6vw; }
+      .est-teaser strong { letter-spacing:-2px; }
+    }
   </style>
 </head>
 <body>
@@ -1025,7 +1110,13 @@
       <h1>Built<br>beyond<br>trends.</h1>
       <div class="tagline">Premium essentials designed for everyday life.</div>
       <div class="hero-subline">Thoughtful construction. Timeless design. Made to last. A new collection that challenges what "form" means.</div>
-      <button class="hero-cta"><span>Explore</span></button>
+      <div class="hero-actions">
+        <button class="hero-cta"><span>Explore</span></button>
+        <div class="hero-mini-countdown" aria-label="Countdown to FORM/01 Drop 001">
+          <span class="hero-mini-label">DROP 001</span>
+          <span class="hero-mini-time" id="heroCountdown">00:00:00</span>
+        </div>
+      </div>
     </div>
     <div class="hero-image"></div>
   </section>
@@ -1035,6 +1126,58 @@
     <p class="intro-copy">
       FORM/01 is not just clothing. It's a mindset. Every piece is designed with intention, built from materials that earn their place, and created to become part of your everyday life—not a trend, but a fixture.
     </p>
+  </section>
+
+  <section class="drop-intro" aria-labelledby="dropTitle">
+    <div class="drop-intro-inner">
+      <div class="eyebrow">FORM/01 / DROP 001</div>
+      <h2 id="dropTitle">THE FIRST FORM<br>TAKES SHAPE.</h2>
+      <p class="drop-copy">Built with thought. Made to last.</p>
+      <p class="drop-subcopy">Our first collection arrives December 31, 2026.</p>
+    </div>
+  </section>
+
+  <section class="drop-countdown" id="drop" aria-label="Countdown to FORM/01 Drop 001">
+    <div class="drop-inner">
+      <div class="countdown">
+        <div class="count-unit"><span id="days">000</span><small>DAYS</small></div>
+        <div class="count-unit"><span id="hours">00</span><small>HOURS</small></div>
+        <div class="count-unit"><span id="minutes">00</span><small>MINUTES</small></div>
+        <div class="count-unit"><span id="seconds">00</span><small>SECONDS</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="est-launch" aria-label="EST.01 first launch">
+    <img src="est_01_drop.png" alt="EST.01 — FORM/01 first launch" onerror="this.style.display='none'; this.parentElement.classList.add('est-image-missing');" />
+    <div class="est-image-fallback" aria-hidden="true"><span>EST.01</span></div>
+  </section>
+
+  <section class="est-statement" aria-labelledby="estStatementTitle">
+    <div class="est-statement-inner">
+      <div class="est-heading-row">
+        <h2 id="estStatementTitle">EST.01</h2>
+        <div class="est-opening">
+          <strong>Everything begins somewhere.</strong>
+          <span>The beginning of something more thoughtful.</span>
+        </div>
+      </div>
+      <div class="est-body">
+        <div class="est-copy">
+          <p>Not with a trend. Not with a season. Not with a desire to follow what already exists. It begins with an idea. EST.01 marks that beginning — the first form, the first thought, the first decision to create something differently. For FORM/01, EST.01 is not a date. It is a principle — a reminder that what we wear can carry more than a logo; it can carry an idea, a feeling, a question, a direction. We believe good design doesn't need to shout. It needs to mean something. Every line has a reason, every form has a purpose, and every detail has a place. EST.01 represents the first principle: create with intention. Because trends change, styles evolve, and seasons pass, but thoughtful design remains. FORM/01 was created for people who don't simply follow what comes next. They imagine it. They question it. They build it.</p>
+          <p class="est-final">EST.01 — The beginning of something more thoughtful.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="est-teaser" aria-label="FORM/01 teaser">
+    <div class="est-teaser-inner">
+      <div class="est-teaser-index">FORM/01 <span>/ 001</span></div>
+      <strong>More to be<br>unveiled soon.</strong>
+      <div class="est-teaser-rule" aria-hidden="true"></div>
+      <small>Stay close. The first form is only the beginning.</small>
+    </div>
   </section>
 
   <section class="lookbook-section">
@@ -1087,37 +1230,7 @@
     </div>
   </section>
 
-  <section class="drop-countdown" id="drop">
-    <div class="drop-inner">
-      <div>
-        <div class="eyebrow">FORM/01 / DROP 001</div>
-        <h2>THE FIRST FORM<br>TAKES SHAPE.</h2>
-        <p class="drop-copy">Built with thought. Made to last.</p>
-        <p class="drop-subcopy">Our first collection arrives December 31, 2026.</p>
-      </div>
 
-      <div class="countdown" aria-label="Countdown to FORM/01 Drop 001">
-        <div class="count-unit">
-          <span id="days">000</span>
-          <small>DAYS</small>
-        </div>
-        <div class="count-unit">
-          <span id="hours">00</span>
-          <small>HOURS</small>
-        </div>
-        <div class="count-unit">
-          <span id="minutes">00</span>
-          <small>MINUTES</small>
-        </div>
-        <div class="count-unit">
-          <span id="seconds">00</span>
-          <small>SECONDS</small>
-        </div>
-      </div>
-
-      <div class="drop-date">31.12.2026 / DROP 001</div>
-    </div>
-  </section>
 
   <section class="philosophy" id="philosophy">
     <div class="philosophy-kicker">Our philosophy / 001</div>
@@ -1190,33 +1303,24 @@
   </footer>
 
   <script>
-    function updateCountdown() {
-      const targetDate = new Date('2026-12-31T23:59:59').getTime();
-      const interval = setInterval(() => {
-        const now = new Date().getTime();
-        const distance = targetDate - now;
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        document.getElementById('days').textContent = String(days).padStart(3, '0');
-        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-
-        if (distance < 0) {
-          clearInterval(interval);
-          document.getElementById('days').textContent = '000';
-          document.getElementById('hours').textContent = '00';
-          document.getElementById('minutes').textContent = '00';
-          document.getElementById('seconds').textContent = '00';
-        }
-      }, 1000);
-    }
-
-    updateCountdown();
+    (() => {
+      const target = new Date('2026-12-31T23:59:59').getTime();
+      const pad = (value, length) => String(Math.max(0, value)).padStart(length, '0');
+      const render = () => {
+        const distance = Math.max(0, target - Date.now());
+        const totalSeconds = Math.floor(distance / 1000);
+        const days = Math.floor(totalSeconds / 86400);
+        const hours = Math.floor((totalSeconds % 86400) / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
+        const values = { days: pad(days, 3), hours: pad(hours, 2), minutes: pad(minutes, 2), seconds: pad(seconds, 2) };
+        Object.entries(values).forEach(([id, value]) => { const el=document.getElementById(id); if(el) el.textContent=value; });
+        const mini=document.getElementById('heroCountdown');
+        if(mini) mini.textContent = `${pad(hours + days * 24, 2)}:${pad(minutes, 2)}:${pad(seconds, 2)}`;
+      };
+      render();
+      setInterval(render, 1000);
+    })();
   </script>
 </body>
 </html>
