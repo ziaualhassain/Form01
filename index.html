@@ -813,25 +813,42 @@
         padding: 100px 20px;
       }
 
+      /* Mobile Lookbook - Image on top, content below */
       .lookbook-container {
         grid-template-columns: 1fr;
-        height: 100vh;
+        height: auto;
       }
 
       .lookbook-image {
-        min-height: 100%;
+        width: 100%;
+        height: 50vh;
+        object-fit: cover;
       }
 
       .lookbook-content {
-        padding: 50px 30px;
-        min-height: 100vh;
+        padding: 40px 20px 60px;
+        min-height: auto;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
       }
 
       .lookbook-title {
         margin-bottom: 20px;
+        font-size: 32px;
+      }
+
+      .lookbook-tagline {
+        font-size: 12px;
+      }
+
+      .lookbook-description {
+        font-size: 14px;
+        max-width: 100%;
+      }
+
+      .philosophy-item {
+        margin-bottom: 30px;
       }
 
       .philosophy {
