@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="FORM/01 — Built beyond trends. Premium essentials designed for everyday life." />
+  <title>FORM/01 — Built beyond trends.</title>
+
+  <style>
+    :root {
+      --bg: #f4f3ef;
+      --text: #111111;
+      --muted: #77756f;
+      --line: #d8d6d0;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    /* NAV */
+    nav {
+      height: 76px;
+      padding: 0 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(244, 243, 239, 0.94);
+      backdrop-filter: blur(12px);
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -1.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 18px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: calc(100vh - 76px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-copy {
+      padding: 8vw 5vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-size: clamp(64px, 9vw, 150px);
+      line-height: 0.82;
+      letter-spacing: -7px;
+      font-weight: 700;
+      max-width: 700px;
+    }
+
+    .tagline {
+      margin-top: 36px;
+      font-size: 18px;
+      letter-spacing: .1px;
+      font-weight: 500;
+    }
+
+    .hero-subline {
+      margin-top: 10px;
+      max-width: 430px;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .hero-cta {
+      margin-top: 42px;
+      display: inline-flex;
+      width: fit-content;
+      padding: 15px 22px;
+      background: var(--text);
+      color: var(--white);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      transition: opacity .2s;
+    }
+
+    .hero-cta:hover {
+      opacity: .75;
+    }
+
+    .hero-image {
+      min-height: 600px;
+      background:
+        linear-gradient(135deg, #d8d5cd 0%, #aaa79f 45%, #68665f 100%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-image::before {
+      content: "FORM/01";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-90deg);
+      font-size: clamp(80px, 11vw, 170px);
+      font-weight: 700;
+      letter-spacing: -7px;
+      color: rgba(255,255,255,.2);
+      white-space: nowrap;
+    }
+
+    .image-label {
+      color: white;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      z-index: 1;
+    }
+
+    /* INTRO */
+    .intro {
+      padding: 12vw 5vw;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8vw;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .intro h2 {
+      font-size: clamp(38px, 5vw, 76px);
+      line-height: .95;
+      letter-spacing: -3px;
+    }
+
+    .intro-copy {
+      max-width: 480px;
+      align-self: end;
+      font-size: 17px;
+      color: #44433f;
+    }
+
+    /* PRODUCTS */
+    .section {
+      padding: 7vw 5vw;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 42px;
+    }
+
+    .section-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .section-meta {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .product-image {
+      aspect-ratio: 4 / 5;
+      margin-bottom: 18px;
+      position: relative;
+      overflow: hidden;
+      background: #ddd9d0;
+    }
+
+    .product-image.one {
+      background: linear-gradient(145deg, #d6d2c8, #9b978e);
+    }
+
+    .product-image.two {
+      background: linear-gradient(145deg, #b7b5af, #595853);
+    }
+
+    .product-image.three {
+      background: linear-gradient(145deg, #e1ded7, #b1ada4);
+    }
+
+    .product-image::after {
+      content: "FORM/01";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -2px;
+      color: rgba(255,255,255,.55);
+    }
+
+    .product-info {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .product-name {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+    }
+
+    .product-detail {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 5px;
+    }
+
+    .price {
+      font-size: 12px;
+    }
+
+
+    /* DROP COUNTDOWN */
+    .drop-countdown {
+      padding: 8vw 5vw;
+      border-bottom: 1px solid var(--line);
+      background: #111;
+      color: #fff;
+    }
+
+    .drop-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .drop-countdown .eyebrow {
+      color: #999;
+    }
+
+    .drop-countdown h2 {
+      font-size: clamp(48px, 8vw, 120px);
+      line-height: .84;
+      letter-spacing: -6px;
+      margin: 0;
+    }
+
+    .drop-copy {
+      margin-top: 32px;
+      font-size: 18px;
+    }
+
+    .drop-subcopy {
+      margin-top: 8px;
+      color: #999;
+      font-size: 13px;
+    }
+
+    .countdown {
+      margin-top: 70px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid #333;
+      border-bottom: 1px solid #333;
+    }
+
+    .count-unit {
+      padding: 28px 20px 26px 0;
+      border-right: 1px solid #333;
+    }
+
+    .count-unit:not(:first-child) {
+      padding-left: 20px;
+    }
+
+    .count-unit:last-child {
+      border-right: 0;
+    }
+
+    .count-unit span {
+      display: block;
+      font-size: clamp(42px, 7vw, 92px);
+      line-height: 1;
+      letter-spacing: -5px;
+      font-weight: 600;
+    }
+
+    .count-unit small {
+      display: block;
+      margin-top: 12px;
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: #999;
+    }
+
+    .drop-date {
+      margin-top: 22px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: #999;
+    }
+
+    @media (max-width: 800px) {
+      .drop-countdown {
+        padding: 75px 20px;
+      }
+
+      .drop-countdown h2 {
+        letter-spacing: -4px;
+      }
+
+      .countdown {
+        margin-top: 50px;
+      }
+
+      .count-unit {
+        padding: 20px 8px 20px 0;
+      }
+
+      .count-unit:not(:first-child) {
+        padding-left: 8px;
+      }
+
+      .count-unit span {
+        font-size: 32px;
+        letter-spacing: -2px;
+      }
+    }
+
+    /* PHILOSOPHY */
+    .philosophy {
+      padding: 9vw 5vw;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .philosophy-kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--muted);
+      margin-bottom: 70px;
+    }
+
+    .philosophy-content {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 8vw;
+      align-items: end;
+    }
+
+    .philosophy h2 {
+      font-size: clamp(52px, 8vw, 125px);
+      line-height: .84;
+      letter-spacing: -6px;
+    }
+
+    .philosophy-copy {
+      max-width: 430px;
+      font-size: 16px;
+      color: #44433f;
+    }
+
+    .philosophy-copy p + p {
+      margin-top: 24px;
+    }
+
+    /* VALUES */
+    .values {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--line);
+    }
+
+    .value {
+      padding: 32px 24px;
+      border-right: 1px solid var(--line);
+    }
+
+    .value:last-child {
+      border-right: 0;
+    }
+
+    .value-number {
+      font-size: 10px;
+      color: var(--muted);
+      margin-bottom: 50px;
+    }
+
+    .value h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .value p {
+      font-size: 12px;
+      color: var(--muted);
+      max-width: 220px;
+    }
+
+    /* STATEMENT */
+    .statement {
+      min-height: 70vh;
+      padding: 7vw 5vw;
+      display: flex;
+      align-items: flex-end;
+      background: var(--text);
+      color: var(--white);
+    }
+
+    .statement h2 {
+      font-size: clamp(55px, 10vw, 150px);
+      line-height: .82;
+      letter-spacing: -7px;
+      max-width: 1100px;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 60px 5vw 30px;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      padding-bottom: 70px;
+    }
+
+    .footer-logo {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -2px;
+    }
+
+    .footer-tagline {
+      color: var(--muted);
+      margin-top: 10px;
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 50px;
+    }
+
+    .footer-column {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .footer-column span:first-child {
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .copyright {
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+      nav {
+        height: 64px;
+        padding: 0 20px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        min-height: 65vh;
+        padding: 80px 20px 50px;
+      }
+
+      .hero-image {
+        min-height: 55vh;
+      }
+
+      h1 {
+        letter-spacing: -4px;
+      }
+
+      .intro {
+        grid-template-columns: 1fr;
+        padding: 90px 20px;
+      }
+
+      .philosophy {
+        padding: 80px 20px;
+      }
+
+      .philosophy-kicker {
+        margin-bottom: 45px;
+      }
+
+      .philosophy-content {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .philosophy h2 {
+        letter-spacing: -4px;
+      }
+
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 70px 20px;
+      }
+
+      .values {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .value {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .value:nth-child(2) {
+        border-right: 0;
+      }
+
+      .statement {
+        min-height: 60vh;
+        padding: 60px 20px;
+      }
+
+      .statement h2 {
+        letter-spacing: -4px;
+      }
+
+      footer {
+        padding: 50px 20px 25px;
+      }
+
+      .footer-top {
+        flex-direction: column;
+      }
+
+      .footer-links {
+        gap: 35px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="#" class="logo">FORM/01</a>
+
+    <div class="nav-links">
+      <a href="#shop">Shop</a>
+      <a href="#drop">Drop 001</a>
+      <a href="#about">About</a>
+      <a href="#lab">The Lab</a>
+      <a href="#journal">Journal</a>
+    </div>
+
+    <div class="nav-actions">
+      <a href="#">Search</a>
+      <a href="#">Bag (0)</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <div>
+          <div class="eyebrow">Independent essentials / 001</div>
+          <h1>FORM<br>/01</h1>
+          <p class="tagline">Built with thought. Made to last.</p>
+          <p class="hero-subline">Every detail is considered. Every piece is built for the long run.</p>
+          <a href="#shop" class="hero-cta">Explore collection</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <span class="image-label">Collection 001 / Everyday Form</span>
+        <span class="image-label">01 — 04</span>
+      </div>
+    </section>
+
+    <section class="intro" id="about">
+      <h2>Clothing with<br>purpose.</h2>
+      <p class="intro-copy">
+        FORM/01 creates premium everyday essentials for people who
+        create, challenge and change what comes next. Considered
+        materials. Refined silhouettes. Built for repeat wear.
+      </p>
+    </section>
+
+    <section class="section" id="shop">
+      <div class="section-head">
+        <div class="section-title">Core collection</div>
+        <div class="section-meta">03 essentials / 001</div>
+      </div>
+
+      <div class="products">
+
+        <article>
+          <div class="product-image one"></div>
+          <div class="product-info">
+            <div>
+              <div class="product-name">Core Heavyweight Tee</div>
+              <div class="product-detail">240 GSM / 100% Cotton</div>
+            </div>
+            <div class="price">₹1,499</div>
+          </div>
+        </article>
+
+        <article>
+          <div class="product-image two"></div>
+          <div class="product-info">
+            <div>
+              <div class="product-name">Core Hoodie</div>
+              <div class="product-detail">400 GSM / Brushed Fleece</div>
+            </div>
+            <div class="price">₹2,999</div>
+          </div>
+        </article>
+
+        <article>
+          <div class="product-image three"></div>
+          <div class="product-info">
+            <div>
+              <div class="product-name">Utility Overshirt</div>
+              <div class="product-detail">Heavy Twill / Relaxed Fit</div>
+            </div>
+            <div class="price">₹3,499</div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+
+    <section class="drop-countdown" id="drop">
+      <div class="drop-inner">
+        <div>
+          <div class="eyebrow">FORM/01 / DROP 001</div>
+          <h2>THE FIRST FORM<br>TAKES SHAPE.</h2>
+          <p class="drop-copy">Built with thought. Made to last.</p>
+          <p class="drop-subcopy">Our first collection arrives December 31, 2026.</p>
+        </div>
+
+        <div class="countdown" aria-label="Countdown to FORM/01 Drop 001">
+          <div class="count-unit">
+            <span id="days">000</span>
+            <small>DAYS</small>
+          </div>
+          <div class="count-unit">
+            <span id="hours">00</span>
+            <small>HOURS</small>
+          </div>
+          <div class="count-unit">
+            <span id="minutes">00</span>
+            <small>MINUTES</small>
+          </div>
+          <div class="count-unit">
+            <span id="seconds">00</span>
+            <small>SECONDS</small>
+          </div>
+        </div>
+
+        <div class="drop-date">31.12.2026 / DROP 001</div>
+      </div>
+    </section>
+
+    <section class="philosophy">
+      <div class="philosophy-kicker">Our philosophy / 001</div>
+      <div class="philosophy-content">
+        <h2>BUILT WITH<br>THOUGHT.<br>MADE TO LAST.</h2>
+        <div class="philosophy-copy">
+          <p>
+            Every detail is considered. Every piece is built for the long run.
+          </p>
+          <p>
+            We believe clothing should earn its place in your wardrobe —
+            through better materials, thoughtful construction and timeless design.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="lab">
+      <div class="section-head">
+        <div class="section-title">The Lab</div>
+        <div class="section-meta">How we build</div>
+      </div>
+
+      <div class="values">
+        <div class="value">
+          <div class="value-number">01</div>
+          <h3>Material</h3>
+          <p>Heavyweight fabrics selected for comfort, structure and longevity.</p>
+        </div>
+
+        <div class="value">
+          <div class="value-number">02</div>
+          <h3>Construction</h3>
+          <p>Thoughtful stitching and construction designed for everyday use.</p>
+        </div>
+
+        <div class="value">
+          <div class="value-number">03</div>
+          <h3>Fit</h3>
+          <p>Relaxed silhouettes designed to move naturally with you.</p>
+        </div>
+
+        <div class="value">
+          <div class="value-number">04</div>
+          <h3>Longevity</h3>
+          <p>Less trend. More time. Pieces made to stay relevant.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="statement" id="journal">
+      <h2>BUILT<br>BEYOND<br>TRENDS.</h2>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">FORM/01</div>
+        <div class="footer-tagline">Built with thought. Made to last.<br>Built beyond trends.</div>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-column">
+          <span>Explore</span>
+          <a href="#shop">Shop</a>
+      <a href="#drop">Drop 001</a>
+          <a href="#about">About</a>
+          <a href="#lab">The Lab</a>
+        </div>
+
+        <div class="footer-column">
+          <span>Info</span>
+          <a href="#">Contact</a>
+          <a href="#">Shipping</a>
+          <a href="#">Returns</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <span>© 2026 FORM/01</span>
+      <span>Built beyond trends.</span>
+    </div>
+  </footer>
+
+
+  <script>
+    (function () {
+      const target = Date.UTC(2026, 11, 31, 23, 59, 59);
+      const days = document.getElementById("days");
+      const hours = document.getElementById("hours");
+      const minutes = document.getElementById("minutes");
+      const seconds = document.getElementById("seconds");
+
+      function updateCountdown() {
+        let remaining = Math.max(0, target - Date.now());
+
+        const d = Math.floor(remaining / 86400000);
+        remaining %= 86400000;
+        const h = Math.floor(remaining / 3600000);
+        remaining %= 3600000;
+        const m = Math.floor(remaining / 60000);
+        remaining %= 60000;
+        const s = Math.floor(remaining / 1000);
+
+        days.textContent = String(d).padStart(3, "0");
+        hours.textContent = String(h).padStart(2, "0");
+        minutes.textContent = String(m).padStart(2, "0");
+        seconds.textContent = String(s).padStart(2, "0");
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    })();
+  </script>
+
+</body>
+</html>
